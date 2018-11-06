@@ -1,0 +1,46 @@
+{
+	"Public function": {
+		"prefix": "pubf",
+		"body": [
+			"public function $1($2)",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "Public function"
+	},
+	"Private function": {
+		"prefix": "prif",
+		"body": [
+			"private function $1($2)",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "Private function"
+	},
+	"Protected function": {
+		"prefix": "prof",
+		"body": [
+			"protected function $1($2)",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "Protected function"
+    },
+    "Dump response": {
+        "prefix": "ddresp",
+        "body": [
+            "dd($this->response->getContent());"
+        ],
+        "description": "Dump response"
+    },
+    "Dump response as JSON": {
+        "prefix": "ddrespjson",
+        "body": [
+            "dd(json_decode($this->response->getContent(), true));"
+        ],
+        "description": "Dump response as JSON"
+    },
+}

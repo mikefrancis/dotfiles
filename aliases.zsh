@@ -12,13 +12,13 @@ alias nrb="bun run build"
 alias nrs="bun storybook"
 alias nrt="bun test"
 
-alias megaupdate="
-  omz update --unattended && \
+alias megaupdate='
+  zsh "$ZSH/tools/upgrade.sh" -i && \
   brew update && \
   brew upgrade && \
   brew upgrade --cask --greedy && \
   brew autoremove && \
-  brew cleanup"
+  brew cleanup'
 
 # ZSH
 
@@ -32,7 +32,12 @@ alias dcd="docker-compose down"
 
 function newpgsql() {
   local port="${2:-5432}"
-  docker run -d --rm --name="$1" -p $port:5432 -e POSTGRES_DB="$1" -e POSTGRES_PASSWORD=mysecretpassword -v "$1:/var/lib/mysql" postgres
+  docker run -d --rm --name="$1" -p $port:5432 -e POSTGRES_DB="$1" -e POSTGRES_PASSWORD=mysecretpassword -v "$1:/var/lib/postgresql/data" postgres
+}
+
+function token() {
+  local length=${1:-32}
+  openssl rand --hex $length
 }
 
 # k8s 
@@ -44,3 +49,4 @@ alias ku="kubectl"
 alias tmrw="gdate -d '+1 day' '+%s'"
 alias pa="php artisan"
 alias pas="pa serve"
+

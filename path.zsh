@@ -3,6 +3,9 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
+# Python
+export PATH="$(brew --prefix python)/libexec/bin:$PATH"
+
 # Composer
 export PATH=$PATH:$HOME/.composer/vendor/bin
 

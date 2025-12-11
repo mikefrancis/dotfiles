@@ -13,6 +13,7 @@ alias nrs="bun storybook"
 alias nrt="bun test"
 
 alias megaupdate='
+  softwareupdate -i -a && \
   zsh "$ZSH/tools/upgrade.sh" -i && \
   brew update && \
   brew upgrade && \

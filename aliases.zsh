@@ -8,11 +8,12 @@ alias lt="ls --tree"
 
 alias ni="bun install"
 alias nrd="bun dev"
-alias nrb="bun run build"
+alias nrb="bun build"
 alias nrs="bun storybook"
-alias nrt="bun test"
+alias nt="bun test"
 
 alias megaupdate='
+  softwareupdate -i -a && \
   zsh "$ZSH/tools/upgrade.sh" -i && \
   brew update && \
   brew upgrade && \
@@ -43,10 +44,4 @@ function token() {
 # k8s 
 
 alias ku="kubectl"
-
-# lol
-
-alias tmrw="gdate -d '+1 day' '+%s'"
-alias pa="php artisan"
-alias pas="pa serve"
 
